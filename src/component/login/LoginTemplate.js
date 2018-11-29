@@ -49,6 +49,13 @@ class LoginTemplate extends Component {
         });
     }
 
+    onChangeInputs = (e)=>{
+        this.setState({
+            //name이 변수 이름이랑 꼭 같아야겠네..
+            [e.target.name] : e.target.value
+        });
+    }
+
     render() {
         const { id, password } = this.state;
 
@@ -59,12 +66,12 @@ class LoginTemplate extends Component {
                 <div className='login-area'>
                     <div className='id-area'>
                         <p className='text-id'> ID </p>
-                        <input type='text' value={id} onChange={this.onIdChange}></input>
+                        <input type='text' name='id' value={id} onChange={this.onChangeInputs}></input>
                     </div>
 
                     <div className='password-area'>
                         <p className='text-password'> password </p>
-                        <input type='password' value={password} onChange={this.onPasswordChange}></input>
+                        <input type='password' name='password' value={password} onChange={this.onChangeInputs}></input>
                     </div>
                 </div>
 
