@@ -3,6 +3,7 @@ import axios from 'axios';
 import TodoListTemplate from './TodoListTemplate';
 import Form from './Form';
 import TodoItemList from './TodoItemList';
+import MyPageButton from '../MyPage/MyPageButton';
 
 
 class TodoListMain extends Component {
@@ -93,7 +94,9 @@ class TodoListMain extends Component {
     // } = this;
 
     return (
-      <TodoListTemplate form={(
+      <TodoListTemplate 
+      mypage={(<MyPageButton></MyPageButton>)}
+      form={(
       <Form
         value={input}
         onKeyPress={this.handleKeyPress}
